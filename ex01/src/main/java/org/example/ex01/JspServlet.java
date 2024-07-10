@@ -14,6 +14,6 @@ public class JspServlet extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/exeJsp.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("/exe.jsp").forward(req, resp);
     }
 }
