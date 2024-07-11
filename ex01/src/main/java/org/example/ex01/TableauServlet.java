@@ -12,10 +12,6 @@ import java.util.List;
 @WebServlet(name = "tableauServlet", value = "/tableau")
 public class TableauServlet extends HttpServlet {
 
-    private String name;
-    private String lastname;
-    private int age;
-
     private List<User> users;
 
     @Override
@@ -23,7 +19,7 @@ public class TableauServlet extends HttpServlet {
         users = List.of(
                 new User("John", "Doe,", 25),
                 new User("Jane", "Doe,", 30),
-                new User("Alice", "bob,", 35)
+                new User("Alice", "Bob,", 35)
         );
     }
 

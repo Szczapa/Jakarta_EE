@@ -29,10 +29,9 @@
         <td><%= user.getAge()%></td>
     </tr>
     <% } %>
-
-
     </tbody>
 </table>
+
 <a class="btn btn-danger" href="/ex01_war_exploded/"> retour </a>
 </body>
 </html>
