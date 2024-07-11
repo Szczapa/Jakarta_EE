@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 @WebServlet(name = "htmlServlet", value = "/htmlServlet")
-public class HtmlServlet extends HttpServlet{
+public class HtmlServlet extends HttpServlet {
     private String prenom;
 
     @Override
@@ -26,7 +26,7 @@ public class HtmlServlet extends HttpServlet{
         PrintWriter writer = resp.getWriter();
         writer.println("<html><body>");
         writer.println("<h1>Je renvoie du texte simple !!!!!</h1>");
-        writer.println("<h2>Bonjour "+prenom+"!!!!!</h2>");
+        writer.println("<h2>Bonjour " + prenom + "!!!!!</h2>");
         writer.println("<a href=\"/ex01_war_exploded/\"> retour </a>    ");
         writer.println("</body></html>");
 

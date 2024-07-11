@@ -3,21 +3,26 @@
 <html>
 <head>
     <title>Selection de Servlet</title>
+    <%@include file="bootstrap/import.html"%>
 </head>
 <body>
 <h1><%= "Selectionnez le Servlet!" %>
 </h1>
 <br/>
-<ul>
-    <li>
-        <a href="jspServlet">JSP Servlet</a>
-    </li>
-    <li>
-        <a href="htmlServlet">HTML Servlet</a>
-    </li>
-    <li>
-        <a href="textServlet">Text Servlet</a>
-    </li>
-</ul>
+
+        <a class="btn btn-success" href="jspServlet">JSP Servlet</a>
+
+
+        <a class="btn btn-success" href="htmlServlet">HTML Servlet</a>
+
+
+        <a class="btn btn-success" href="textServlet">Text Servlet</a>
+
+
+        <a class="btn btn-success" href="fbt">Page Bootstrap 1</a>
+
+
+        <a class="btn btn-success" href="sbt">Page Bootstrap 2</a>
+
 </body>
 </html>

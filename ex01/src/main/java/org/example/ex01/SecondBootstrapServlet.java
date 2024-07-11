@@ -8,12 +8,11 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-
-@WebServlet(name = "jspServlet", value = "/jspServlet")
-public class JspServlet extends HttpServlet {
+@WebServlet(name = "secondBootstrapServlet", value = "/sbt")
+public class SecondBootstrapServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/exe.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("/bootstrap/bootstrap2.jsp").forward(req, resp);
     }
 }
