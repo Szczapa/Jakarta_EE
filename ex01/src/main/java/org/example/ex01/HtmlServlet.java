@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "htmlServlet", urlPatterns = "/htmlServlet")
+@WebServlet(name = "htmlServlet", value = "/htmlServlet")
 public class HtmlServlet extends HttpServlet{
     private String prenom;
 

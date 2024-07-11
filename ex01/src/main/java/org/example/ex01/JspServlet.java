@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet(name = "jspServlet", urlPatterns = "/jspServlet")
+@WebServlet(name = "jspServlet", value = "/jspServlet")
 public class JspServlet extends HttpServlet{
 
     @Override
