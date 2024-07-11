@@ -24,5 +24,7 @@
 
         <a class="btn btn-success" href="sbt">Page Bootstrap 2</a>
 
+        <a class="btn btn-success" href="tableau"> Tableau utilisateur</a>
+
 </body>
 </html>
