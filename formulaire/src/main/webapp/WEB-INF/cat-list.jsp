@@ -8,6 +8,11 @@
 </head>
 <body>
 <h1>Liste des chats</h1>
+
+<% if (catList.isEmpty()) {%>
+    <h3>Pas de chat</h3>
+<%} else {%>
+
 <table class="table">
     <thead>
     <tr>
@@ -31,6 +36,7 @@
     <% } %>
     </tbody>
 </table>
-  <a href="form-servlet" class="btn btn-primary"> Retourner au formulaire </a>
+<% } %>
+  <a href="form-servlet" class="btn btn-primary"> Aller au formulaire </a>
 </body>
 </html>

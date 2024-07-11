@@ -9,7 +9,8 @@
 <h1><%= "Bienvenue" %>
 </h1>
 <br/>
-<a href="form-servlet">Formulaire</a>
-<%--<a href="list-servlet">Liste</a>--%>
+<a class="btn btn-primary" href="form-servlet">Formulaire</a>
+<a class="btn btn-primary" href="cat-list"> Liste de chat</a>
+
 </body>
 </html>
