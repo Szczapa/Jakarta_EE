@@ -14,40 +14,41 @@
 </head>
 <body>
 <h1>Formulaire</h1>
-<form method="post" action="form-servlet">
-    <div class="form-group">
+<form method="post" action="form-servlet" class="container">
+    <div class="form-group mb-3">
         <label for="name">Nom</label>
         <input type="text" class="form-control" id="name" name="name" placeholder="Nom">
     </div>
 
 
-    <div class="form-group">
+    <div class="form-group mb-3">
         <label for="birthdate">Date de naissance</label>
         <input type="date" class="form-control" id="birthdate" name="birthdate" placeholder="Date de naissance">
     </div>
 
-    <div class="form-group">
+    <div class="form-group mb-3">
         <label for="race">Race de chat</label>
-        <select id="race" name="race" class="custom-select">
+        <select id="race" name="race" class="form-select">
             <% for (CatRace race : CatRace.values()) { %>
-            <option value="<%= race.name() %>"><%= race.name() %>
+            <option value="<%= race.name() %>"><%= race.name().toLowerCase().replace("_", " ") %>
             </option>
             <% } %>
         </select>
     </div>
 
-    <div class="form-group">
+    <div class="form-group mb-3">
         <label for="foodtype">Nourriture favorite</label>
-        <select id="foodtype" name="foodtype" class="custom-select">
+        <select id="foodtype" name="foodtype" class="form-select">
             <% for (FoodType foodType : FoodType.values()) { %>
-            <option value="<%= foodType.name() %>"><%= foodType.name()  %>
+            <option value="<%= foodType.name() %>"><%= foodType.name().toLowerCase().replace("_", " ")%>
             </option>
             <% }%>
         </select>
     </div>
 
+    <div class="form-group mb-3">
     <button type="submit" class="btn btn-primary">Envoyer</button>
-
+    </div>
 </form>
 </body>
 </html>
