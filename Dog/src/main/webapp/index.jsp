@@ -10,12 +10,14 @@
     <h1><%= "Bienvenue" %>
     </h1>
     <br/>
+    <section class="container mt-5">
     <div class="mb-1">
-        <a class="btn btn-primary" href="dog">Formulaire d'ajout</a>
+        <a class="btn btn-dark" href="dog">Formulaire d'ajout</a>
     </div>
     <div class="mb-1">
-        <a class="btn btn-primary" href="dog-list">Liste des Chiens</a>
+        <a class="btn btn-dark" href="dog-list">Liste des Chiens</a>
     </div>
+        </section>
 </div>
 </body>
 </html>

@@ -61,4 +61,40 @@ public class DogRepository {
         }
     }
 
+    public boolean updateDog(Dog dog) {
+        try {
+            session = sessionFactory.openSession();
+            session.beginTransaction();
+            session.update(dog);
+            session.getTransaction().commit();
+            return true;
+        } catch (Exception ex) {
+            session.getTransaction().rollback();
+            ex.printStackTrace();
+            return false;
+        } finally {
+            if (!session.isOpen()) {
+                session.close();
+            }
+        }
+    }
+
+    public boolean deleteDog(Dog dog) {
+        try {
+            session = sessionFactory.openSession();
+            session.beginTransaction();
+            session.delete(dog);
+            session.getTransaction().commit();
+            return true;
+        } catch (Exception ex) {
+            session.getTransaction().rollback();
+            ex.printStackTrace();
+            return false;
+        } finally {
+            if (!session.isOpen()) {
+                session.close();
+            }
+        }
+    }
+
 }

@@ -45,8 +45,12 @@ public class DogServlet extends HttpServlet {
             }
             int id = Integer.parseInt(idParam);
             Dog dog = dogRepository.getDogById(id);
+            System.out.println(dog.getDogRace());
+            System.out.println(dog.getBirthDate());
+            System.out.println(dog.getName());
             if (dog != null) {
                 req.setAttribute(DOG_ATTRIBUTE, dog);
+                req.setAttribute("mode", "info");
                 req.getRequestDispatcher(DOG_JSP).forward(req, resp);
             } else {
                 req.setAttribute(ERROR_ATTRIBUTE, "Dog not found");
@@ -65,6 +69,7 @@ public class DogServlet extends HttpServlet {
                 req.getRequestDispatcher(DOG_LIST_JSP).forward(req, resp);
                 break;
             case DOG_PATH:
+                req.setAttribute("mode", "form");
                 req.getRequestDispatcher(DOG_JSP).forward(req, resp);
                 break;
             default:
@@ -87,6 +92,30 @@ public class DogServlet extends HttpServlet {
             }
         } catch (Exception e) {
             resp.getWriter().println("Error saving dog: " + e.getMessage());
+        }
+    }
+
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        try {
+            String idParam = req.getParameter("id");
+            if (idParam == null) {
+                throw new NumberFormatException("ID parameter is missing");
+            }
+            int id = Integer.parseInt(idParam);
+            Dog dog = dogRepository.getDogById(id);
+            if (dog != null) {
+                if (dogRepository.deleteDog(dog)) {
+                    resp.setStatus(HttpServletResponse.SC_OK);
+                    resp.sendRedirect(req.getContextPath() + DOG_LIST_PATH);
+                } else {
+                    resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+                }
+            } else {
+                resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+            }
+        } catch (NumberFormatException e) {
+            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
         }
     }
 }

@@ -15,7 +15,9 @@
     <%@include file="import.html" %>
 </head>
 <body>
-<table class="table">
+<section class="container mt-5">
+    <h1>Liste des Chiens</h1>
+<table class="table table-striped table-dark">
     <thead>
     <tr>
         <th scope="col">#</th>
@@ -23,7 +25,7 @@
         <th scope="col">Nom</th>
         <th scope="col">Date de naissance</th>
         <th scope="col">Race</th>
-        <th scope="col">Fiche Perso</th>
+        <th scope="col">Option</th>
     </tr>
     </thead>
     <tbody>
@@ -43,13 +45,28 @@
         </td>
         <td><%= dog.getBirthDate().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) %>
         </td>
-        <td><%= dog.getDogRace().name().toLowerCase() %>
+        <td><%= dog.getDogRace().name().toLowerCase().replace("_", " ")%>
         </td>
-        <td><a class="btn btn-success m-1" href="dog/detail?id=<%= dog.getId()%>">Fiche</a></td>
+        <td>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                    Option
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="dog/detail?id=<%= dog.getId()%>">Fiche</a></li>
+                    <li><a class="dropdown-item" href="dog/edit?id=<%= dog.getId()%>">Modifier</a></li>
+                    <li><a class="dropdown-item" href="dog/delete?id=<%= dog.getId()%>">Supprimer</a></li>
+                </ul>
+            </div>
+        </td>
     </tr>
-    <% }} %>
+    <% }
+    } %>
     </tbody>
 </table>
-<a class="btn btn-primary" href="dog">Ajouter Chien</a>
+<a class="btn btn-dark" href="dog">Ajouter Chien</a>
+</section>
 </body>
 </html>
+
