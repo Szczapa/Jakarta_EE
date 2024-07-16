@@ -6,11 +6,11 @@
     <%@include file="WEB-INF/import.html" %>
 </head>
 <body class="container">
-<%@include file="WEB-INF/header.html" %>
+<%@include file="WEB-INF/header.jsp" %>
 <section id="content">
     <p class="text-center">Bienvenue dans le systeme de gestion Hospitaliere</p>
 </section>
 
-<%@include file="WEB-INF/footer.html" %>
+<%@include file="WEB-INF/footer.jsp" %>
 </body>
 </html>

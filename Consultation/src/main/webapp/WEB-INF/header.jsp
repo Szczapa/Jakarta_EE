@@ -2,9 +2,9 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
 </head>
 <body>
 <section id="header">
@@ -15,10 +15,10 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center">
                 <li class="nav-item">
-                    <a class="nav-link  text-light" aria-current="page" href="#">Accueil</a>
+                    <a aria-current="page" class="nav-link  text-light" href="<%= request.getContextPath() %>">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="#">Liste des patients</a>
+                    <a class="nav-link text-light" href="<%= request.getContextPath() %>/patient/list">Liste des patients</a>
                 </li>
             </ul>
         </nav>
