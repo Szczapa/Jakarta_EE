@@ -23,7 +23,7 @@ public class DogRepository {
             ex.printStackTrace();
             return null;
         } finally {
-            if (!session.isOpen()) {
+            if (session.isOpen()) {
                 session.close();
             }
         }
@@ -41,7 +41,7 @@ public class DogRepository {
             ex.printStackTrace();
             return false;
         } finally {
-            if (!session.isOpen()) {
+            if (session.isOpen()) {
                 session.close();
             }
         }
@@ -55,7 +55,7 @@ public class DogRepository {
             ex.printStackTrace();
             return null;
         } finally {
-            if (!session.isOpen()) {
+            if (session.isOpen()) {
                 session.close();
             }
         }
@@ -73,7 +73,7 @@ public class DogRepository {
             ex.printStackTrace();
             return false;
         } finally {
-            if (!session.isOpen()) {
+            if (session.isOpen()) {
                 session.close();
             }
         }
@@ -91,7 +91,7 @@ public class DogRepository {
             ex.printStackTrace();
             return false;
         } finally {
-            if (!session.isOpen()) {
+            if (session.isOpen()) {
                 session.close();
             }
         }
