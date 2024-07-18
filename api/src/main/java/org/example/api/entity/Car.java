@@ -1,6 +1,6 @@
 package org.example.api.entity;
-import java.util.List;
 
+import java.util.List;
 
 public class Car {
     private int carId;
@@ -9,8 +9,7 @@ public class Car {
     private int productionDate;
     private List<Car> cars;
 
-    public Car() {
-    }
+    public Car() {}
 
     public Car(int carId, String brand, String color, int productionDate) {
         this.carId = carId;
@@ -18,6 +17,8 @@ public class Car {
         this.color = color;
         this.productionDate = productionDate;
     }
+
+    // Getters and setters
 
     public int getProductionDate() {
         return productionDate;
@@ -49,13 +50,5 @@ public class Car {
 
     public void setCarId(int carId) {
         this.carId = carId;
-    }
-
-    public List<Car> getCars() {
-        return cars;
-    }
-
-    public void setCars(List<Car> cars) {
-        this.cars = cars;
     }
 }

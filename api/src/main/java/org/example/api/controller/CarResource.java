@@ -26,12 +26,18 @@ public class CarResource {
     }
 
     @POST
+    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Car createCar() {
-        return carService.saveCar(1,"BMW", "Black", String.valueOf(LocalDate.now().getYear()));
+    public Car createCar(Car car) {
+        if (car == null) {
+            System.out.println("Received null Car object");
+            return null;
+        }
+        System.out.println("Received Car: " + car.getBrand());
+        return carService.saveCar(car);
     }
 
-    @POST
+    @PUT
     @Path("/{carId}")
     @Produces(MediaType.APPLICATION_JSON)
     public Car updateCar(@PathParam("carId") int carId, Car car) {
@@ -41,6 +47,14 @@ public class CarResource {
     @DELETE
     @Path("/{carId}")
     public int deleteCar(@PathParam("carId") int carId) {
-        return carService.deleteCar(carId).getCarId();
+        Car car = carService.deleteCar(carId);
+        return car != null ? car.getCarId() : -1;
+    }
+
+    @GET
+    @Path("/{carId}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Car getCarById(@PathParam("carId") int carId) {
+        return carService.getById(carId);
     }
 }

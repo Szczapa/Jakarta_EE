@@ -1,9 +1,13 @@
 package org.example.api;
 
 import jakarta.ws.rs.ApplicationPath;
-import jakarta.ws.rs.core.Application;
+import org.example.api.controller.CarResource;
+import org.glassfish.jersey.server.ResourceConfig;
+
 @ApplicationPath("/api")
-
-public class HelloApplication extends Application {
-
+public class HelloApplication extends ResourceConfig {
+    public HelloApplication() {
+        packages("org.example.api.controller");
+        register(CarResource.class);
+    }
 }
